@@ -28,7 +28,8 @@ def fileDump(rootDir):
 
 def printDupes(rootDir):
     fileList = fileDump(rootDir)
-    dupes = fileList.duplicated(subset='dir',keep=False)
+    dupes = fileList[fileList.duplicated(subset='file',keep=False)]
+    print(dupes.size)
     dupes.to_csv('dupedFiles.csv')
 
 

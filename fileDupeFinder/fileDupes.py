@@ -23,7 +23,7 @@ def fileDump(rootDir):
     print(len(allFiles),len(allDirs))
     #   Return in a data frame, because it's easier to csv it.
     fileList = pd.DataFrame({'file': allFiles, 'dir': allDirs})
-    fileList = fileList.sort_values(by = 'dir')
+    fileList = fileList.sort_values(by = 'file')
     return fileList
 
 def printDupes(rootDir):
